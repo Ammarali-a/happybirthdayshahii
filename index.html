@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Best Friend! ❤️</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: hsl(347, 100%, 67%);
+            --secondary: #6a5af9;
+            --accent: #00cec9;
+            --light: #fff5f7;
+            --dark: #2d3436;
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffeef2 100%);
+            color: var(--dark);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 0 0 30px 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -150px;
+            right: -100px;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -50px;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-btn {
+            padding: 12px 25px;
+            background: white;
+            color: var(--primary);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        .section {
+            display: none;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        /* Memory Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .memory-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .memory-img {
+            height: 220px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .memory-content {
+            padding: 20px;
+        }
+
+        .memory-date {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        
+        /* Love Section */
+        .love-message {
+            background: linear-gradient(45deg, #ff6b8b, #ff8e53);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .love-message::before {
+            content: '❤️';
+            position: absolute;
+            font-size: 10rem;
+            top: 50%;
+            left: 50%;
+            opacity: 0.5;
+            transform: translate(-50%, -50%);
+        }
+
+        .love-message h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .love-message p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 80px;
+            background: rgb(255, 255, 255);
+            opacity: 0.9;
+            border-radius: 15px;
+            text-decoration-color: #2d3436;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: 15px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--dark);
+            color: white;
+            border-radius: 30px 30px 0 0;
+            margin-top: 50px;
+        }
+
+        .heart {
+            color: var(--primary);
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.2); }
+            10% { transform: scale(1.1); }
+            15% { transform: scale(1.3); }
+            50% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-content::after {
+                left: 50px !important;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Happy Birthday Shahi, My Best Friend!</h1>
+            <p class="tagline">A celebration of our friendship, memories, and the incredible person you are. Here's to many more memories together!</p>
+            
+            <nav>
+                <button class="nav-btn active" data-section="memories"><i class="fas fa-images"></i> Our Memories</button>
+                <button class="nav-btn" data-section="love"><i class="fas fa-heart"></i> Love & Appreciation</button>
+                <button class="nav-btn" data-section="timeline"><i class="fas fa-history"></i> Our Journey</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Memories Section -->
+        <section id="memories" class="section active">
+            <h2>Our Precious Memories</h2>
+            <p style="text-align: center; margin-bottom: 20px; font-size: 1.1rem;">Every moment with you is a treasure I hold close to my heart.</p>
+            
+            <div class="gallery">
+                <div class="memory-card">
+                    <div class="memory-img" style="background-image: url('/IMG_4225.jpeg');"></div>
+                    <div class="memory-content">
+                        <span class="memory-date">Jan 13 - 2026</span>
+                        <h3>Tempt Cafe</h3>
+                        <p>That day we spent laughing by the Cafe, holding hands and collecting memories. You made the simplest moments magical.</p>
+                    </div>
+                </div>
+                
+                <div class="memory-card">
+                    <div class="memory-img" style="background-image: url('IMG_3767.jpeg');"></div>
+                    <div class="memory-content">
+                        <span class="memory-date">Dec 13 - 2025</span>
+                        <h3>Lara Cafe</h3>
+                        <p>On that day you fullfiled my happiness. As we enjoyed talking goosips and moment we had in lara cafe with matching color outfit .</p>
+                    </div>
+                </div>
+                
+                <div class="memory-card">
+                    <div class="memory-img" style="background-image: url('IMG_3306.jpeg');"></div>
+                    <div class="memory-content">
+                        <span class="memory-date">Nov 1 - 2025</span>
+                        <h3>Chai sutta bar</h3>
+                        <p>We filled with memories and had a quality time with our Sista's,which makes our bond stronger.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     
+        <!-- Love Section -->
+        <section id="love" class="section">
+            <h2>All My Love & Appreciation For You</h2>
+            
+            <div class="love-message">
+                <h3>To My Dearest Friend,</h3>
+                <p>
+                    On your special day, I want to remind you how incredibly amazing you are. You've been my rock through storms and my partner in laughter through sunny days. Your kindness, strength, and beautiful soul inspire me every single day.
+                    <br><br>
+                    Thank you for the late-night talks, the spontaneous adventures, and for always believing in me even when I didn't believe in myself. You've seen me at my worst and still choose to stay, and that means more than words could ever express.
+                    <br><br>
+                    On your birthday, I wish you endless joy, success in all your endeavors, and a life filled with as much happiness as you've brought into mine. May this year bring you closer to your dreams and surround you with love and light.
+                    <br><br>
+                    Forever your friend, always here for you, Happy Birthday Shahi.
+                </p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <h3 style="color: var(--secondary);">Friendship Compatibility: <span style="color: var(--primary);">100% PERFECT MATCH</span></h3>
+                <div style="background: #f0f0f0; height: 20px; border-radius: 10px; margin: 20px auto; max-width: 500px; overflow: hidden;">
+                    <div style="background: linear-gradient(to right, var(--primary), var(--secondary)); height: 100%; width: 100%; border-radius: 10px;"></div>
+                </div>
+                <p style="font-style: italic;">We were meant to be friends, and I'm so grateful for that.</p>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="section">
+            <h2>Our Friendship Journey</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content" style="background-image: url('IMG_1868.jpeg'); background-size: cover; background-position: center; color: rgb(0, 0, 0); ">
+                        
+                        <h3 style="text-shadow:3px 2px 4px rgb(255, 255, 0)">First Meeting</h3>
+                        <p style="text-shadow:3px 2px 4px rgb(239, 21, 239)">The day we first met. I knew instantly there was something special about you. Little did I know you'd become my best friend.</p>
+                        <span style="color: var(--accent); font-weight: 600;">28 june 2025</span>
+                        
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content" style="background-image: url('IMG_3308.jpeg'); background-size: cover; background-position: center; color: rgb(0, 0, 0);">
+                        <h3 style="text-shadow:3px 2px 4px rgb(255, 255, 0)">Chai Sutta Bar</h3>
+                        <p style="text-shadow:3px 2px 4px rgb(239, 21, 239)">after our first meet , we met in irish cafe which is unplanned and make a beautiful memories and we let to go chai sutta bar which was unforgetable.</p>
+                        <span style="color: var(--accent); font-weight: 600;">01 nov 2025</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content" style="background-image: url('IMG_3369.jpeg'); background-size: cover; background-position: center; color: rgb(0, 0, 0);">
+                        <h3 style="text-shadow:3px 2px 4px rgb(255, 255, 0)">Being There Through Tough Times</h3>
+                        <p style="text-shadow:3px 2px 4px rgb(239, 21, 239)">When life got hard, you were my shoulder to cry on. Your support gave me strength I didn't know I had and we travelled lot on that day.</p>
+                        <span style="color: var(--accent); font-weight: 600;">10 nov 2025</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content" style="background-image: url('IMG_3767 copy.jpeg'); background-size: cover; background-position: center; color: rgb(0, 0, 0);">
+                        <h3 style="text-shadow:3px 2px 4px rgb(255, 255, 0)">Healing on my worst day</h3>
+                        <p style="text-shadow:3px 2px 4px rgba(248, 123, 28, 0.898)">You healed me on that day when I felt completely lost, and I’ll always be grateful for your presence.
+Because of you, that painful moment turned into the beginning of my healing</p>
+                        <span style="color: var(--accent); font-weight: 600;">13 Dec 2025</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content" style="background-image: url('IMG_3921.jpeg'); background-size: cover; background-position: center; color: rgb(0, 0, 0);">
+                        <h3 style="text-shadow:3px 2px 4px rgb(255, 255, 0)">Bride to be of shalima</h3>
+                        <p style="text-shadow:3px 2px 4px rgb(247, 123, 15)">we met we talk we spend we laugh everything goes well.</p>
+                        <span style="color: var(--accent); font-weight: 600;">23 Dec 2025</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content" style="background-image: url('IMG_4225.jpeg'); background-size: cover; background-position: center; color: rgb(0, 0, 0);">
+                        <h3 style="text-shadow:3px 2px 4px rgb(255, 255, 0)">Today & Beyond</h3>
+                        <p style="text-shadow:3px 2px 4px rgb(247, 124, 17)">Here we are, still making memories, still laughing until we cry, still the best of friends. I can't wait for all our future adventures.</p>
+                        <span style="color: var(--accent); font-weight: 600;">13 Jan 2026</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h3 style="font-family: 'Dancing Script', cursive; font-size: 2.5rem; margin-bottom: 15px;">Happy Birthday Again!</h3>
+            <p style="max-width: 600px; margin: 0 auto 20px; opacity: 0.9;">
+                 Thank you for being the incredible friend that you are. Thank you shahi.
+            </p>
+            <div style="font-size: 2rem; margin: 20px 0;">
+                <span class="heart">❤️</span>
+                <span class="heart">🎂</span>
+                <span class="heart">🎉</span>
+                <span class="heart">🎈</span>
+                <span class="heart">❤️</span>
+            </div>
+            <p>Made with <span class="heart">❤️</span> by your best friend</p>
+            <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.7;">© Birthday Tribute 2023</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation between sections
+        document.querySelectorAll('.nav-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and sections
+                document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding section
+                const sectionId = button.getAttribute('data-section');
+                document.getElementById(sectionId).classList.add('active');
+            });
+        });
+
+        // Add floating hearts animation on click
+        document.addEventListener('click', function(e) {
+            // Create heart element
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.style.position = 'fixed';
+            heart.style.fontSize = '20px';
+            heart.style.pointerEvents = 'none';
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            heart.style.zIndex = '9999';
+            heart.style.animation = 'floatUp 2s ease-out forwards';
+            
+            // Add animation
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes floatUp {
+                    0% {
+                        transform: translateY(0) scale(1);
+                        opacity: 1;
+                    }
+                    100% {
+                        transform: translateY(-100px) scale(0);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            document.body.appendChild(heart);
+            
+            // Remove heart after animation
+            setTimeout(() => {
+                heart.remove();
+            }, 2000);
+        });
+
+        // Add confetti on page load
+        window.addEventListener('load', function() {
+            // Create confetti elements
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.innerHTML = ['🎉', '🎊', '❤️', '🎂', '🎈'][Math.floor(Math.random() * 5)];
+                    confetti.style.position = 'fixed';
+                    confetti.style.fontSize = Math.random() * 20 + 15 + 'px';
+                    confetti.style.pointerEvents = 'none';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-50px';
+                    confetti.style.zIndex = '9998';
+                    confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
+                    
+                    // Add fall animation
+                    const style = document.createElement('style');
+                    style.innerHTML = `
+                        @keyframes fall {
+                            to {
+                                transform: translateY(100vh) rotate(${Math.random() * 360}deg);
+                            }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                    
+                    document.body.appendChild(confetti);
+                    
+                    // Remove confetti after animation
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }, i * 100);
+            }
+        });
+    </script>
+</body>
+</html>
